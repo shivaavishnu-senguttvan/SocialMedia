@@ -321,8 +321,6 @@ C:\Users\shivaavishnu.sengutt\Desktop\SocialMedia\SocialMedia\bin\Debug\netcorea
 C:\Users\shivaavishnu.sengutt\Desktop\SocialMedia\SocialMedia\obj\Debug\netcoreapp3.1\SocialMedia.csprojAssemblyReference.cache
 C:\Users\shivaavishnu.sengutt\Desktop\SocialMedia\SocialMedia\obj\Debug\netcoreapp3.1\SocialMedia.AssemblyInfoInputs.cache
 C:\Users\shivaavishnu.sengutt\Desktop\SocialMedia\SocialMedia\obj\Debug\netcoreapp3.1\SocialMedia.AssemblyInfo.cs
-C:\Users\shivaavishnu.sengutt\Desktop\SocialMedia\SocialMedia\obj\Debug\netcoreapp3.1\SocialMedia.csproj.CoreCompileInputs.cache
-C:\Users\shivaavishnu.sengutt\Desktop\SocialMedia\SocialMedia\obj\Debug\netcoreapp3.1\SocialMedia.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\shivaavishnu.sengutt\Desktop\SocialMedia\SocialMedia\obj\Debug\netcoreapp3.1\SocialMedia.RazorAssemblyInfo.cache
 C:\Users\shivaavishnu.sengutt\Desktop\SocialMedia\SocialMedia\obj\Debug\netcoreapp3.1\SocialMedia.RazorAssemblyInfo.cs
 C:\Users\shivaavishnu.sengutt\Desktop\SocialMedia\SocialMedia\obj\Debug\netcoreapp3.1\SocialMedia.TagHelpers.input.cache
@@ -348,3 +346,6 @@ C:\Users\shivaavishnu.sengutt\Desktop\SocialMedia\SocialMedia\obj\Debug\netcorea
 C:\Users\shivaavishnu.sengutt\Desktop\SocialMedia\SocialMedia\obj\Debug\netcoreapp3.1\SocialMedia.dll
 C:\Users\shivaavishnu.sengutt\Desktop\SocialMedia\SocialMedia\obj\Debug\netcoreapp3.1\SocialMedia.pdb
 C:\Users\shivaavishnu.sengutt\Desktop\SocialMedia\SocialMedia\obj\Debug\netcoreapp3.1\SocialMedia.genruntimeconfig.cache
+C:\Users\shivaavishnu.sengutt\Desktop\SocialMedia\SocialMedia\bin\Debug\netcoreapp3.1\GeoCoordinate.NetCore.dll
+C:\Users\shivaavishnu.sengutt\Desktop\SocialMedia\SocialMedia\obj\Debug\netcoreapp3.1\SocialMedia.csproj.CoreCompileInputs.cache
+C:\Users\shivaavishnu.sengutt\Desktop\SocialMedia\SocialMedia\obj\Debug\netcoreapp3.1\SocialMedia.MvcApplicationPartsAssemblyInfo.cache

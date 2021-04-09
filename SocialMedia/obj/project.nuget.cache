@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "CA+gse10M4pc/gCr4+ziVt1EnYotmGEGNjiVDDVFPwjm+IshgmL9HulJkBCRuzOvGb4sMS0/eMT/AVXLcM7Zwg==",
+  "dgSpecHash": "N10xU2aj+o+ZSa+sRvE5eS8ViNNwqIIq3zjU499gRoPSpZfvqqxIchD8kiT5YBzSo5NDt8rDqlSjVXxS8ONhgA==",
   "success": true,
   "projectFilePath": "C:\\Users\\shivaavishnu.sengutt\\Desktop\\SocialMedia\\SocialMedia\\SocialMedia.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\shivaavishnu.sengutt\\.nuget\\packages\\firebaseauthentication.net\\3.7.1\\firebaseauthentication.net.3.7.1.nupkg.sha512",
+    "C:\\Users\\shivaavishnu.sengutt\\.nuget\\packages\\geocoordinate.netcore\\1.0.0.1\\geocoordinate.netcore.1.0.0.1.nupkg.sha512",
     "C:\\Users\\shivaavishnu.sengutt\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.2\\microsoft.aspnetcore.cryptography.internal.3.1.2.nupkg.sha512",
     "C:\\Users\\shivaavishnu.sengutt\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.2\\microsoft.aspnetcore.cryptography.keyderivation.3.1.2.nupkg.sha512",
     "C:\\Users\\shivaavishnu.sengutt\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

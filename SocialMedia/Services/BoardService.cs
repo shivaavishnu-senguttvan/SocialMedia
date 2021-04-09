@@ -2,6 +2,8 @@
 using System.Linq;
 using SocialMedia.Data;
 using SocialMedia.ViewModels;
+using System;
+using GeoCoordinatePortable;
 
 namespace SocialMedia.Services
 {
@@ -23,8 +25,33 @@ namespace SocialMedia.Services
                 model.Boards.Add(new BoardList.Board
                 {
                     Id = board.Id,
-                    Title = board.Title
+                    Name = string.IsNullOrEmpty(board.Name) ? string.Empty : board.Name
                 });
+            }
+
+            return model;
+        }
+
+        public BoardList ListBoard(double latitude, double langitude)
+        {
+            var model = new BoardList();
+
+            foreach (var board in _dbContext.Boards)
+            {
+                var sCoord = new GeoCoordinate(latitude, langitude);
+                var eCoord = new GeoCoordinate(Convert.ToDouble(board.Latitude), Convert.ToDouble(board.Longitude));
+                double result = sCoord.GetDistanceTo(eCoord) / 1000;
+                if (result < 500)
+                {
+                    model.Boards.Add(new BoardList.Board
+                    {
+                        Id = board.Id,
+                        Title = string.IsNullOrEmpty(board.Title) ? string.Empty : board.Title,
+                        Name = string.IsNullOrEmpty(board.Name) ? string.Empty : board.Name,
+                        Latitude = board.Latitude == null ? 0 : board.Latitude,
+                        Longitude = board.Longitude == null ? 0 : board.Longitude
+                    });
+                }
             }
 
             return model;
@@ -39,7 +66,7 @@ namespace SocialMedia.Services
                 .ThenInclude(c => c.Cards)
                 .SingleOrDefault(x => x.Id == id);
 
-            if (board == null) 
+            if (board == null)
                 return model;
             model.Id = board.Id;
             model.Title = board.Title;
@@ -80,10 +107,10 @@ namespace SocialMedia.Services
                 var firstColumn = board.Columns.FirstOrDefault();
                 var secondColumn = board.Columns.FirstOrDefault();
                 var thirdColumn = board.Columns.FirstOrDefault();
-            
+
                 if (firstColumn == null || secondColumn == null || thirdColumn == null)
                 {
-                    firstColumn = new Models.Column { Title = "Todo"};
+                    firstColumn = new Models.Column { Title = "Todo" };
                     secondColumn = new Models.Column { Title = "Doing" };
                     thirdColumn = new Models.Column { Title = "Done" };
                     board.Columns.Add(firstColumn);
@@ -104,7 +131,10 @@ namespace SocialMedia.Services
         {
             _dbContext.Boards.Add(new Models.Board
             {
-                Title = viewModel.Title
+                Title = viewModel.Title,
+                Latitude = viewModel.Latitude,
+                Longitude = viewModel.Longitude,
+                Name = viewModel.Name
             });
 
             _dbContext.SaveChanges();

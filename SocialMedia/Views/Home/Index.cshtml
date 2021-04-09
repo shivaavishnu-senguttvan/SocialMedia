@@ -3,7 +3,7 @@
 
 <div class="container">
     <div class="row">
-        <h2>Users</h2>
+        <h2>All Users</h2>
     </div>
 
     <div class="row">
@@ -17,7 +17,7 @@
                     @board.Id
                 </span>
                 <span class="card-title">
-                    @board.Title
+                    @board.Name
                 </span>
             </div>
         </div>
@@ -26,6 +26,23 @@
     </div>
 </div>
 <body>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Users nearby (within 2 km)
+        </div>   <!--en dof panel-heading -->
+        <div class="panel-body">
+            <table class="table table-bordered" id="Table">
+                <tr>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                </tr>   <!--end of table-row -->
+            </table>   <!--end of table -->
+        </div> <!--end of Panel-body -->
+    </div> <!--end of Panel -->
+    <!--Member List will appened here -->
+
     <p id="demo"></p>
 
     <script>
@@ -40,10 +57,52 @@
         }
 
         function showPosition(position) {
+            var longitude1 = position.coords.longitude;
+            var latitude1 = position.coords.latitude;
+            alert(longitude1);
+            alert(latitude1);
             x.innerHTML = "Latitude: " + position.coords.latitude +
                 "<br>Longitude: " + position.coords.longitude;
+
+            $(document).ready(function () {
+                $.ajax({
+                    type: "GET",
+                    url: "/api/Board/getusers",
+                    data: {
+                        Longitude: longitude1,
+                        Latitude: latitude1
+                    },
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        //Clear all previous list of members
+                        $("#DIV").html('');
+                        var DIV = '';
+
+                        $.each(response, function (i, item) {
+                            var rows = "<tr>" +
+                                "<td id='Name'>" + item.name + "</td>" +
+                                "<td id='Title'>" + item.title + "</td>" +
+                                "<td id='Latitude'>" + item.latitude + "</td>" +
+                                "<td id='Longitude'>" + item.longitude + "</td>" +
+                                "</tr>";
+                            $('#Table').append(rows);
+                        });
+                        console.log(response);
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                        alert("Failure");
+                    },
+                    error: function (response) {
+                        alert(response);
+                        alert("Error");
+                    }
+                });
+            });
         }
         window.onload = getLocation;
+
     </script>
 </body>
 
