@@ -10,6 +10,7 @@ namespace SocialMedia.Services
     public class BoardService
     {
         private readonly SocialMediaDbContext _dbContext;
+        public int distance = 2;
 
         public BoardService(SocialMediaDbContext dbContext)
         {
@@ -41,7 +42,7 @@ namespace SocialMedia.Services
                 var sCoord = new GeoCoordinate(latitude, langitude);
                 var eCoord = new GeoCoordinate(Convert.ToDouble(board.Latitude), Convert.ToDouble(board.Longitude));
                 double result = sCoord.GetDistanceTo(eCoord) / 1000;
-                if (result < 500)
+                if (result < distance)
                 {
                     model.Boards.Add(new BoardList.Board
                     {
